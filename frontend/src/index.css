@@ -1,0 +1,418 @@
+/* Login.css */
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #dbeafe, #e9d5ff, #82f9ff);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-form h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  color: #374c64;
+  margin-bottom: 0.5rem;
+}
+
+.login-form p {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.login-form input {
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: #f9fafb;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #4cf2fb;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.3);
+}
+
+.login-form button[type="submit"] {
+  background: linear-gradient(to right, #6e98f392, #3aedeaf5);
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.login-form button[type="submit"]:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #1da6d8, #28b6d9);
+}
+
+.login-form button[type="button"] {
+  background: none;
+  border: none;
+  color: #25a6eb;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: 5px;
+}
+
+.login-form button[type="button"]:hover {
+  color: #1da3d8;
+}
+/* Estilos existentes del login se mantienen aquí */
+
+/* ===========================================
+   ESTILOS DEL PIANO GAME
+   =========================================== */
+
+/* Contenedor principal del juego */
+.piano-game {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+  font-family: "Arial", sans-serif;
+}
+
+.piano-game-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Header del juego */
+.piano-game-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(45deg, #ffd700, #ffed4e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.game-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  color: white;
+  min-width: 100px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Botón de inicio */
+.start-button {
+  background: linear-gradient(45deg, #4caf50, #45a049);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+  margin-bottom: 2rem;
+}
+
+.start-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.6);
+}
+
+.start-button:disabled {
+  background: linear-gradient(45deg, #999, #777);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Contenedor del piano */
+.piano-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  perspective: 1000px;
+}
+
+.piano-base {
+  background: linear-gradient(to bottom, #2c2c2c, #1a1a1a);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 2px solid #444;
+}
+
+.piano-keys {
+  display: flex;
+  gap: 4px;
+  position: relative;
+}
+
+/* Teclas blancas del piano */
+.piano-key {
+  width: 70px;
+  height: 200px;
+  background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+  border: 2px solid #ccc;
+  border-radius: 0 0 8px 8px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.15s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
+.piano-key:hover {
+  background: linear-gradient(to bottom, #f8f8f8, #e8e8e8);
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.piano-key:active,
+.piano-key.active {
+  background: linear-gradient(to bottom, #ffd700, #ffed4e);
+  transform: translateY(4px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-color: #daa520;
+}
+
+/* Efecto de brillo en las teclas */
+.piano-key::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  height: 30px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), transparent);
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+/* Etiquetas de las teclas */
+.key-label {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.key-binding {
+  background: #333;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+/* Teclas negras decorativas */
+.piano-key-black {
+  position: absolute;
+  width: 45px;
+  height: 130px;
+  background: linear-gradient(to bottom, #2c2c2c, #000);
+  border: 1px solid #000;
+  border-radius: 0 0 4px 4px;
+  top: 0;
+  z-index: 2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.piano-key:nth-child(1)::after,
+.piano-key:nth-child(2)::after,
+.piano-key:nth-child(4)::after {
+  content: "";
+  position: absolute;
+  right: -22px;
+  top: -2px;
+  width: 45px;
+  height: 130px;
+  background: linear-gradient(to bottom, #2c2c2c, #000);
+  border: 1px solid #000;
+  border-radius: 0 0 4px 4px;
+  z-index: 2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Estados del juego */
+.game-over {
+  background: rgba(220, 53, 69, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(220, 53, 69, 0.5);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  color: #ff6b6b;
+}
+
+.game-over h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.retry-button {
+  background: linear-gradient(45deg, #dc3545, #c82333);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.retry-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);
+}
+
+/* Loading state */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  color: white;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Instrucciones */
+.game-instructions {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  color: white;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.game-instructions h3 {
+  margin-top: 0;
+  color: #ffd700;
+}
+
+.game-instructions p {
+  margin: 0.5rem 0;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .piano-game {
+    padding: 1rem;
+  }
+
+  .piano-game-title {
+    font-size: 2rem;
+  }
+
+  .game-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .piano-key {
+    width: 60px;
+    height: 160px;
+  }
+
+  .piano-base {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .piano-keys {
+    gap: 2px;
+  }
+
+  .piano-key {
+    width: 50px;
+    height: 140px;
+  }
+
+  .piano-key:nth-child(1)::after,
+  .piano-key:nth-child(2)::after,
+  .piano-key:nth-child(4)::after {
+    width: 35px;
+    right: -17px;
+  }
+}
